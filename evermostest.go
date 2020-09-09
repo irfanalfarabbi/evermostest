@@ -16,6 +16,8 @@ func main() {
   http.HandleFunc("/shops/order", api.Order)
   http.HandleFunc("/shops/mass_order", api.MassOrder)
 
+  http.HandleFunc("/keys/simulation", api.KeySimulation)
+
   http.HandleFunc("/healthz", healthz)
 
   http.ListenAndServe(":8080", nil)
