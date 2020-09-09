@@ -9,6 +9,10 @@ import (
 )
 
 func main() {
+  http.HandleFunc("/tennis/load_ball", api.LoadBall)
+  http.HandleFunc("/tennis/load_balls", api.LoadBalls)
+  http.HandleFunc("/tennis/dump_balls", api.DumpBalls)
+
   http.HandleFunc("/healthz", healthz)
 
   http.ListenAndServe(":8080", nil)
